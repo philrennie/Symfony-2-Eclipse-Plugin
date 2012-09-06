@@ -24,10 +24,10 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.PlatformUI;
+import org.getcomposer.core.Autoload;
 
-import com.dubture.composer.core.model.Autoload;
-import com.dubture.composer.core.model.Composer;
-import com.dubture.composer.core.model.ModelAccess;
+import com.dubture.composer.eclipse.model.EclipsePHPPackage;
+import com.dubture.composer.eclipse.model.ModelAccess;
 import com.dubture.pdt.ui.wizards.classes.ClassCreationWizard;
 import com.dubture.symfony.core.log.Logger;
 import com.dubture.symfony.core.resources.SymfonyMarker;
@@ -74,9 +74,9 @@ public class DialogUtils
         IResource resource = marker.getResource();
 
         // TODO: refactor this to the composer plugin
-        for (Composer pkg : composer.getPackages(resource.getProject().getFullPath())) {
+        for (EclipsePHPPackage pkg : composer.getPackages(resource.getProject().getFullPath())) {
 
-            Autoload autoload = pkg.getAutoload();
+            Autoload autoload = pkg.getPhpPackage().getAutoload();
             if (autoload != null) {
 
                 IPath path = pkg.getPath().append(autoload.getPSR0Path());

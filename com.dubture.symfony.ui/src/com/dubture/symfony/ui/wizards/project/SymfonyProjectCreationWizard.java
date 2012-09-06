@@ -90,7 +90,7 @@ public class SymfonyProjectCreationWizard extends PHPProjectCreationWizard {
             System.arraycopy(natures, 0, newNatures, 2, natures.length);
 
             newNatures[0] = SymfonyNature.NATURE_ID;
-            newNatures[1] = "com.dubture.composer.core.composerNature";
+            newNatures[1] = "com.dubture.composer.lib.eclipse.composerNature";
 
             for (int i = 0; i < extensionNatures.size(); i++) {
                 newNatures[natures.length + 2 + i] = extensionNatures.get(i);
