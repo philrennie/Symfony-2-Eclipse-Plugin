@@ -112,9 +112,7 @@ public class SymfonyProjectWizardFirstPage extends PHPProjectWizardFirstPage {
         fragment = (WizardFragment) Platform.getAdapterManager().loadAdapter(
                                                                              data,
                                                                              PHPProjectWizardFirstPage.class.getName());
-
-        // don't really have a choice with Symfony2 ;)
-        // fVersionGroup = new VersionGroup(composite);
+        fVersionGroup = new VersionGroup(composite, PHPVersion.PHP5_3);
 
         fSymfonyLayoutGroup = new SymfonyLayoutGroup(composite);
         fJavaScriptSupportGroup = new JavaScriptSupportGroup(composite, this);
